@@ -16,6 +16,16 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY
     ${CMAKE_BINARY_DIR}/lib
     )
 
+# tell CMake where to find *.cmake module files
+set(CMAKE_MODULE_PATH
+    ${CMAKE_MODULE_PATH}
+    ${PROJECT_SOURCE_DIR}/cmake
+    )
+
+# include cmake/arch.cmake
+include(arch)
+include(test)
+
 # process src/CMakeLists.txt
 add_subdirectory(src)
 
